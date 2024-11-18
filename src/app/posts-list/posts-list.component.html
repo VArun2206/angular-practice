@@ -2,7 +2,7 @@
 <h3 style="text-align: center">Posts({{ posts.length }})</h3>
 
 @for(post of posts;track post.id){
-<section style="border: solid">
+<section style="border: solid; padding: 2%">
   <h3>User.Id: {{ post.userId }}</h3>
   <a routerLink="/posts/{{ post.id }}"
     ><h3>Title : {{ post.title }}</h3></a
