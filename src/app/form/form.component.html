@@ -1,0 +1,15 @@
+<form [formGroup]="addForm" (submit)="onSubmit()">
+  <input type="text" formControlName="firstname" /> <br /><br />
+  @if(firstname.errors && (firstname.touched || firstname.dirty)){
+  <span>Please enter a valid name...</span>
+  }
+  <input type="text" formControlName="lastname" /><br /><br />
+  @if(lastname.errors && (lastname.touched || lastname.dirty)){
+  <span>Please enter a valid name...</span>
+  }
+  <input type="text" formControlName="middlename" /><br /><br />
+  @if(middlename.errors && (middlename.touched || middlename.dirty)){
+  <span>Please enter a valid name...</span>
+  }
+  <button type="submit" [disabled]="addForm.invalid">Submit</button>
+</form>
