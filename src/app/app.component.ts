@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProjectTasksComponent } from './project-tasks/project-tasks.component';
 import { HeaderComponent } from './header/header.component';
+import { ProjectsService } from './projects.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import { HeaderComponent } from './header/header.component';
 })
 export class AppComponent {
   title = 'first-app';
-  dummy() {
-    console.log('hi');
-  }
+  // dummy() {
+  //   console.log('hi');
+  // }
 }
