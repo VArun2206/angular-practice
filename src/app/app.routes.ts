@@ -7,6 +7,7 @@ import { AddPostComponent } from './add-post/add-post.component';
 import { TodoComponent } from './todo/todo.component';
 import { AddToDOComponent } from './add-to-do/add-to-do.component';
 import { EditToDoComponent } from './edit-to-do/edit-to-do.component';
+import { ViewTasksComponent } from './view-tasks/view-tasks.component';
 
 export const routes: Routes = [
   {
@@ -40,5 +41,9 @@ export const routes: Routes = [
   {
     path: 'editToDo/:id',
     component: EditToDoComponent,
+  },
+  {
+    path: 'viewToDo/:id',
+    component: ViewTasksComponent,
   },
 ];
