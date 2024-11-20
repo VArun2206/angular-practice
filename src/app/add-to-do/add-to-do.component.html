@@ -33,7 +33,7 @@
   </section>
   <section style="display: grid">
     <label for="description">Description : </label>
-    <input
+    <textarea
       class="form-control {{
         description.touched && description.errors
           ? 'is-invalid'
@@ -44,7 +44,7 @@
       type="text"
       style="padding: 2%; font-size: large"
       formControlName="description"
-    />
+    ></textarea>
     @if(description.errors && (description.touched || description.dirty)){<span
       class="text-danger"
       >Description is required</span
