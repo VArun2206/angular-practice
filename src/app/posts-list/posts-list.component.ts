@@ -11,6 +11,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './posts-list.component.css',
 })
 export class PostsListComponent implements OnInit {
+  posts!: any[];
+
   constructor(private postService: PostService) {}
 
   ngOnInit(): void {
@@ -24,5 +26,4 @@ export class PostsListComponent implements OnInit {
       }
     );
   }
-  posts!: any[];
 }

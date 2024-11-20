@@ -1,3 +1,4 @@
 export const environment = {
-  api_URL: 'http://localhost:3001/todoList',
+  todo_URL: 'http://localhost:3001/todoList',
+  login_URL: 'http://localhost:3001/users',
 };

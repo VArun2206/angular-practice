@@ -14,29 +14,29 @@ import {
   styleUrl: './form.component.css',
 })
 export class FormComponent implements OnInit {
-  onSubmit() {
-    console.log(this.addForm.value);
-    this.addForm.reset();
-  }
   addForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.addForm = this.fb.group({
-      firstname: [null, [Validators.required, Validators.minLength(4)]],
-      lastname: [null, [Validators.required, Validators.minLength(4)]],
-      middlename: [null, [Validators.required, Validators.minLength(1)]],
+      firstName: [null, [Validators.required, Validators.minLength(4)]],
+      lastName: [null, [Validators.required, Validators.minLength(4)]],
+      middleName: [null, [Validators.required, Validators.minLength(1)]],
     });
   }
 
-  get firstname() {
-    return this.addForm.controls['firstname'];
+  get firstName() {
+    return this.addForm.controls['firstName'];
   }
-  get lastname() {
-    return this.addForm.controls['lastname'];
+  get lastName() {
+    return this.addForm.controls['lastName'];
   }
-  get middlename() {
-    return this.addForm.controls['middlename'];
+  get middleName() {
+    return this.addForm.controls['middleName'];
+  }
+  onSubmit() {
+    console.log(this.addForm.value);
+    this.addForm.reset();
   }
 }

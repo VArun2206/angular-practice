@@ -1,15 +1,34 @@
-<form [formGroup]="addForm" (submit)="onSubmit()">
-  <input type="text" formControlName="firstname" /> <br /><br />
-  @if(firstname.errors && (firstname.touched || firstname.dirty)){
-  <span>Please enter a valid name...</span>
+<h2 style="text-align: center">Example Form</h2>
+
+<form
+  [formGroup]="addForm"
+  (submit)="onSubmit()"
+  style="
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+    gap: 15px;
+  "
+  class="card p-5"
+>
+  <label for="firstName">FirstName</label>
+  <input type="text" formControlName="firstName" />
+  @if(firstName.errors && (firstName.touched || firstName.dirty)){
+  <p>Please enter a valid name...</p>
   }
-  <input type="text" formControlName="lastname" /><br /><br />
-  @if(lastname.errors && (lastname.touched || lastname.dirty)){
-  <span>Please enter a valid name...</span>
+  <label for="lastName">LastName</label>
+  <input type="text" formControlName="lastName" />
+  @if(lastName.errors && (lastName.touched || lastName.dirty)){
+  <p>Please enter a valid name...</p>
   }
-  <input type="text" formControlName="middlename" /><br /><br />
-  @if(middlename.errors && (middlename.touched || middlename.dirty)){
-  <span>Please enter a valid name...</span>
+  <label for="middleName">MiddleName </label>
+  <input type="text" formControlName="middleName" />
+  @if(middleName.errors && (middleName.touched || middleName.dirty)){
+  <p>Please enter a valid name...</p>
   }
-  <button type="submit" [disabled]="addForm.invalid">Submit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">
+    Submit
+  </button>
 </form>

@@ -10,13 +10,18 @@ import { PostService } from '../post.service';
   styleUrl: './post.component.css',
 })
 export class PostComponent implements OnInit {
+  id!: string;
+  post!: any;
+
   constructor(
     private route: ActivatedRoute,
     private postService: PostService
   ) {}
 
-  id!: string;
-  post!: any;
+  ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.fetchPost();
+  }
 
   fetchPost() {
     this.postService.getPostsById(this.id).subscribe(
@@ -28,10 +33,5 @@ export class PostComponent implements OnInit {
         console.log(error);
       }
     );
-  }
-
-  ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    this.fetchPost();
   }
 }

@@ -3,12 +3,15 @@
     class="px-5 py-2 bg-secondary align-items-center d-flex justify-content-between"
   >
     <h2 class="text-light">{{ title }}</h2>
+    @if(user()){
     <section class="d-flex">
       <a class="text-light nav-link" routerLink="/">Home</a> &nbsp;&nbsp;
       <a class="text-light nav-link" routerLink="/form">Form</a> &nbsp;
       <a class="text-light nav-link" routerLink="/projects">Projects</a> &nbsp;
       <a class="text-light nav-link" routerLink="/posts">Posts</a> &nbsp;
-      <a class="text-light nav-link" routerLink="/todo">To-Do</a>
+      <a class="text-light nav-link" routerLink="/todo">To-Do</a> &nbsp;
+      <button class="btn btn-outline-light" (click)="logOut()">LogOut</button>
     </section>
+    }
   </nav>
 </header>

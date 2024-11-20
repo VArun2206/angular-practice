@@ -16,15 +16,22 @@ import Swal from 'sweetalert2';
   styleUrl: './todo.component.css',
 })
 export class TodoComponent implements OnInit {
+  id!: string;
+  todoList!: any[];
+  dtOptions: Config = {};
+
   constructor(
     private todoService: TodoService,
     private toastr: ToastrService
   ) {}
 
-  id!: string;
-  todoList!: any;
-
-  dtOptions: Config = {};
+  ngOnInit(): void {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 10,
+    };
+    this.fetchToDo();
+  }
 
   fetchToDo() {
     this.todoService.getToDos().subscribe(
@@ -50,12 +57,5 @@ export class TodoComponent implements OnInit {
         console.log(error);
       }
     );
-  }
-  ngOnInit(): void {
-    this.fetchToDo();
-    this.dtOptions = {
-      pagingType: 'full_members',
-      pageLength: 10,
-    };
   }
 }

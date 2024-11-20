@@ -3,12 +3,12 @@
 <br />
 
 @for(module of projects;track module.id){
-<section class="users" style="border: solid">
+<section class="container" style="border: solid">
   <h3>{{ module.name }}({{ module.tasks.length }})</h3>
   <table style="width: 100%" [border]="2">
     <tr>
-      <td [width]="50"></td>
-      <th [width]="250">Task Title</th>
+      <td [width]="100"></td>
+      <th [width]="200">Task Title</th>
       <th [width]="200">Priority</th>
       <th [width]="200">Status</th>
       <th [width]="200">Due On</th>
@@ -24,11 +24,13 @@
       <td>{{ task.dueOn }}</td>
       <td>{{ task.createdOn }}</td>
       <td style="display: flex; padding: 2px 10px; gap: 5px">
-        <button>Share</button>
-        <button>Delete</button>
+        <button class="btn btn-primary">Share</button>
+        <button class="btn btn-danger">Delete</button>
       </td>
     </tr>
     }
   </table>
+  <br />
 </section>
+<br />
 }

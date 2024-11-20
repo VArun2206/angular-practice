@@ -11,13 +11,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './view-tasks.component.css',
 })
 export class ViewTasksComponent implements OnInit {
+  id!: string;
+  todo!: any;
+
   constructor(
     private todoService: TodoService,
     private route: ActivatedRoute
   ) {}
 
-  id!: string;
-  todo!: any;
+  ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.fetchTask();
+  }
 
   fetchTask() {
     this.todoService.getTaskById(this.id).subscribe(
@@ -29,10 +34,5 @@ export class ViewTasksComponent implements OnInit {
         console.log(error);
       }
     );
-  }
-
-  ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    this.fetchTask();
   }
 }

@@ -10,9 +10,9 @@ import { ProjectsService } from '../projects.service';
   styleUrl: './project-tasks.component.css',
 })
 export class ProjectTasksComponent {
+  projects: any[] = [];
+
   constructor(private projectService: ProjectsService) {
     this.projects = this.projectService.taskList;
   }
-
-  projects: any[] = [];
 }

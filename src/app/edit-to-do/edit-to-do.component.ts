@@ -18,6 +18,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './edit-to-do.component.css',
 })
 export class EditToDoComponent implements OnInit {
+  addTask!: FormGroup;
+  id!: string;
+  todo!: any;
+
   constructor(
     private fbt: FormBuilder,
     private route: ActivatedRoute,
@@ -25,24 +29,6 @@ export class EditToDoComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService
   ) {}
-
-  addTask!: FormGroup;
-
-  id!: string;
-  todo!: any;
-
-  fetchTask() {
-    this.todoService.getTaskById(this.id).subscribe(
-      (res: any) => {
-        console.log(res);
-        this.todo = res;
-        this.addTask.patchValue(res);
-      },
-      (error: Error) => {
-        console.log(error);
-      }
-    );
-  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -59,6 +45,19 @@ export class EditToDoComponent implements OnInit {
   }
   get description() {
     return this.addTask.controls['description'];
+  }
+
+  fetchTask() {
+    this.todoService.getTaskById(this.id).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.todo = res;
+        this.addTask.patchValue(res);
+      },
+      (error: Error) => {
+        console.log(error);
+      }
+    );
   }
 
   onSubmit() {

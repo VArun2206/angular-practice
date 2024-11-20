@@ -6,9 +6,9 @@ import { environment } from '../environments/environment';
   providedIn: 'root',
 })
 export class TodoService {
-  constructor(private http: HttpClient) {}
+  api_URL = environment.todo_URL;
 
-  api_URL = environment.api_URL;
+  constructor(private http: HttpClient) {}
 
   getToDos() {
     let url = `${this.api_URL}`;

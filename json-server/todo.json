@@ -1,14 +1,22 @@
 {
   "todoList": [
     {
-      "id": "e915",
-      "title": "Learn pending angular topics",
-      "description": "Learn the pending angular topics and practice them"
-    },
-    {
       "id": "be28",
       "title": "Topic - CRUD",
-      "description": "Developed a To-Do list page with Title,Description.Pages to add new tasks and to edit an existing task  were developed."
+      "description": "Develop a To-Do list page with Title,Description.Pages to add new tasks and to edit an existing task  were developed."
+    },
+    {
+      "id": "3f07",
+      "title": "Topic - Authentication",
+      "description": "Create a new array  of objects in todo.json(mock API).  Develop a login component and logout componentm, then implement the authentication process."
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "arun",
+      "email": "arun@gmail.com",
+      "password": "password"
     }
   ]
 }
